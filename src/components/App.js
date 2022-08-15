@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import AppRouter from "./Router";
 import { authService } from "../fbase";
+import styles from "../style/Home.module.css";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -13,7 +14,7 @@ function App() {
         setInit(true);
         // setUserObj(user);
         setUserObj({
-          displayName: user.displayName.slice(0, 10),
+          displayName: user.displayName,
           uid: user.uid,
           updateProfile: (args) => user.updateProfile(args),
         });
@@ -28,7 +29,7 @@ function App() {
     const user = authService.currentUser;
     // setUserObj(Object.assign({}, user));
     setUserObj({
-      displayName: user.displayName.slice(0, 10),
+      displayName: user.displayName,
       uid: user.uid,
       updateProfile: (args) => user.updateProfile(args),
     });
@@ -42,7 +43,7 @@ function App() {
           userObj={userObj}
         />
       ) : (
-        "Initializing..."
+        <h3 className={styles.initialize}>Initializing...</h3>
       )}
       {/* <AppRouter
         refreshUser={refreshUser}

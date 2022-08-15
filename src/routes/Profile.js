@@ -26,7 +26,6 @@ const Profile = ({ userObj, refreshUser }) => {
     setNewDisplayName(value);
   };
   const onSubmit = async (e) => {
-    e.preventDefault();
     if (userObj.displayName !== newDisplayName) {
       await userObj.updateProfile({
         displayName: newDisplayName,
@@ -36,21 +35,20 @@ const Profile = ({ userObj, refreshUser }) => {
   };
   return (
     <div className={stylesedit.profileBox}>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} action="/">
         <input
           onChange={onChange}
           type="text"
           placeholder="Display name"
           value={newDisplayName}
           className={stylesedit.modifyNweet}
+          maxLength={24}
         />
-        <Link to="/">
-          <input
-            type="submit"
-            value="Update Profile"
-            className={stylesedit.modifySub}
-          />
-        </Link>
+        <input
+          type="submit"
+          value="Update Profile"
+          className={stylesedit.modifySub}
+        />
       </form>
       <button onClick={onLogOutClick} className={stylesedit.cancelBtn}>
         Log Out

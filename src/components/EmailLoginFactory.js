@@ -35,7 +35,7 @@ const EmailLoginFactory = () => {
   };
   const toggleAccount = () => setNewAccout((prev) => !prev);
   return (
-    <div className={styles.container}>
+    <div className={styles.Logincontainer}>
       <form onSubmit={onSubmit}>
         <input
           className={styles.email}
@@ -56,7 +56,7 @@ const EmailLoginFactory = () => {
           type="submit"
           value={newAccount ? "Create Account" : "Log In"}
         ></input>
-        {error}
+        <p className={styles.error}>{error}</p>
       </form>
       <button className={styles.eType} onClick={toggleAccount}>
         {newAccount ? "Sign In" : "Create Account"}
