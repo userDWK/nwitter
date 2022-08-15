@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  color: white;
+}
+.BOX {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 24rem;
+  height: 100vh;
+  padding: 2rem;
+}
+.authCon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input,
+button {
+  width: 100%;
+  margin: 0.25rem;
+  height: 2.1rem;
+  border-radius: 15px;
+}
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+input[type="text"]::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 0.4rem;
+  transform: translate(0, -50%);
+  font-size: 10px;
+  font-weight: 600;
+}
+.twitterLogo {
+  position: relative;
+  top: -15%;
+  left: 50%;
+  transform: translate(-50%);
+  color: rgb(20, 150, 255);
+  font-size: 2rem;
+}
+.container .login {
+  background-color: rgb(20, 150, 255);
+  color: white;
+  font-size: 5px;
+  font-weight: 100;
+}
+.container .eType {
+  position: relative;
+  background: none;
+  color: rgb(40, 110, 255);
+  font-size: 5px;
+}
+.container .eType::after {
+  content: "";
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 2rem;
+  height: 1px;
+  background-color: rgb(40, 100, 255);
+}
+.socialBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.google {
+  /* font-size: 5px; */
+  width: 47.5%;
+  font-size: 10px;
+  display: inline-block;
+  margin-right: 2.5%;
+  font-weight: bolder;
+}
+.github {
+  margin-left: 2.5%;
+  font-size: 10px;
+  width: 47.5%;
+  font-weight: bolder;
+}
+.googleLogo,
+.githubLogo {
+  font-size: 0.75rem;
+}

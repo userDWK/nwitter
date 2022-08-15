@@ -1,70 +1,14 @@
-// import { authService } from "../fbase";
-// import React, { useState } from "react";
-
-// const Auth = () => {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [newAccount, setNewAccount] = useState(true);
-//   const onChange = (event) => {
-//     const {
-//       target: { name, value },
-//     } = event;
-//     if (name === "email") {
-//       setEmail(value);
-//     } else if (name === "password") {
-//       setPassword(value);
-//     }
-//   };
-//   const onSubmit = async (event) => {
-//     event.preventDefault();
-//     try {
-//       let data;
-//       if (newAccount) {
-//         data = await authService.createUserWithEmailAndPassword(
-//           email,
-//           password
-//         );
-//       } else {
-//         data = await authService.signInWithEmailAndPassword(email, password);
-//       }
-//       console.log(data);
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-//   return (
-//     <div>
-//       <form onSubmit={onSubmit}>
-//         <input
-//           onChange={onChange}
-//           name="email"
-//           type="text"
-//           placeholder="Email"
-//           required="required"
-//           value={email}
-//         />
-//         <input
-//           onChange={onChange}
-//           name="password"
-//           type="password"
-//           placeholder="password"
-//           required="required"
-//           value={password}
-//         />
-//         <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
-//       </form>
-//       <div>
-//         <button>Continue With Google</button>
-//         <button>Continue With Github</button>
-//       </div>
-//     </div>
-//   );
-// };
-// export default Auth;
-
 import EmailLoginFactory from "components/EmailLoginFactory";
 import React, { useState } from "react";
 import { authService, firebaseInstance } from "../fbase";
+import styles from "../style/Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faGoogle,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   const onSocialClick = async (e) => {
@@ -80,14 +24,19 @@ const Auth = () => {
     await authService.signInWithPopup(provider);
   };
   return (
-    <div>
+    <div className={styles.authCon}>
+      <Link to="/">
+        <FontAwesomeIcon icon={faTwitter} className={styles.twitterLogo} />
+      </Link>
       <EmailLoginFactory />
-      <div>
-        <button name="google" onClick={onSocialClick}>
-          Continue With Google
+      <div className={styles.socialBox}>
+        <button className={styles.google} name="google" onClick={onSocialClick}>
+          Continue With Google{" "}
+          <FontAwesomeIcon icon={faGoogle} className={styles.googleLogo} />
         </button>
-        <button name="github" onClick={onSocialClick}>
-          Continue With Github
+        <button className={styles.github} name="github" onClick={onSocialClick}>
+          Continue With Github{" "}
+          <FontAwesomeIcon icon={faGithub} className={styles.githubLogo} />
         </button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AppRouter from "./Router";
 import { authService } from "../fbase";
 
@@ -13,13 +13,14 @@ function App() {
         setInit(true);
         // setUserObj(user);
         setUserObj({
-          displayName: user.displayName,
+          displayName: user.displayName.slice(0, 10),
           uid: user.uid,
           updateProfile: (args) => user.updateProfile(args),
         });
       } else {
+        setUserObj(null);
         setIsLoggedIn(false);
-        setInit(false);
+        setInit(true);
       }
     });
   }, []);
@@ -27,14 +28,14 @@ function App() {
     const user = authService.currentUser;
     // setUserObj(Object.assign({}, user));
     setUserObj({
-      displayName: user.displayName,
+      displayName: user.displayName.slice(0, 10),
       uid: user.uid,
       updateProfile: (args) => user.updateProfile(args),
     });
   };
   return (
     <>
-      {/* {init ? (
+      {init ? (
         <AppRouter
           refreshUser={refreshUser}
           isLoggedIn={isLoggedIn}
@@ -42,12 +43,12 @@ function App() {
         />
       ) : (
         "Initializing..."
-      )} */}
-      <AppRouter
+      )}
+      {/* <AppRouter
         refreshUser={refreshUser}
         isLoggedIn={isLoggedIn}
         userObj={userObj}
-      />
+      /> */}
     </>
   );
 }

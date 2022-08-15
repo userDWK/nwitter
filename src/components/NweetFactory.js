@@ -1,6 +1,8 @@
 import { dbService, storageService } from "fbase";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import stylesNweet from "../style/nwitter.module.css";
 
 const NweetFactory = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
@@ -49,23 +51,40 @@ const NweetFactory = ({ userObj }) => {
     setAttachment(null);
   };
   return (
-    <form onSubmit={paintingNweet}>
-      <input
-        value={nweet}
-        type="text"
-        onChange={nweetText}
-        placeholder="what's on your mind?"
-        maxLength={120}
-      />
-      <input type="file" accept="image/*" onChange={onFileChange} />
-      <input type="submit" value="Nweet" />
-      {attachment && (
-        <div>
-          <img src={attachment} width="50px" height="50px" />
-          <button onClick={onClearAttachment}>Clear</button>
+    <div className={stylesNweet.nweetForm}>
+      <form onSubmit={paintingNweet}>
+        <div className={stylesNweet.conSub}>
+          <input
+            value={nweet}
+            type="text"
+            onChange={nweetText}
+            placeholder="what's on your mind?"
+            maxLength={120}
+            className={stylesNweet.nweet}
+          />
+          <input type="submit" value="→" className={stylesNweet.nweetSub} />
         </div>
-      )}
-    </form>
+        <div className={stylesNweet.nweetSubBox2}>
+          <label htmlFor="inputFile">
+            Add Photos <span> +</span>
+          </label>
+          <input
+            id="inputFile"
+            type="file"
+            accept="image/*"
+            onChange={onFileChange}
+            className={stylesNweet.file}
+          />
+        </div>
+
+        {attachment && (
+          <div className={stylesNweet.photoBox}>
+            <img src={attachment} />
+            <button onClick={onClearAttachment}>Clear</button>
+          </div>
+        )}
+      </form>
+    </div>
   );
 };
 export default NweetFactory;

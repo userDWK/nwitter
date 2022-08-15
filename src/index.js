@@ -1,12 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './components/App';
-import authService from './fbase';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./components/App";
+import authService from "./fbase";
+import styles from "style/Home.module.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
+  <div className={styles.BOX}>
     <App />
+  </div>
   // {/* </React.StrictMode> */}
 );
 

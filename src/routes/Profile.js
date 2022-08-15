@@ -1,7 +1,7 @@
 import { authService, dbService } from "../fbase";
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import stylesedit from "../style/edit.module.css";
 const Profile = ({ userObj, refreshUser }) => {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
   const navigate = useNavigate();
@@ -35,18 +35,27 @@ const Profile = ({ userObj, refreshUser }) => {
     }
   };
   return (
-    <>
+    <div className={stylesedit.profileBox}>
       <form onSubmit={onSubmit}>
         <input
           onChange={onChange}
           type="text"
           placeholder="Display name"
           value={newDisplayName}
+          className={stylesedit.modifyNweet}
         />
-        <input type="submit" value="Update Profile" />
+        <Link to="/">
+          <input
+            type="submit"
+            value="Update Profile"
+            className={stylesedit.modifySub}
+          />
+        </Link>
       </form>
-      <button onClick={onLogOutClick}>Log Out</button>
-    </>
+      <button onClick={onLogOutClick} className={stylesedit.cancelBtn}>
+        Log Out
+      </button>
+    </div>
   );
 };
 export default Profile;

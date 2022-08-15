@@ -1,0 +1,178 @@
+.container {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 24rem;
+  margin-top: 2rem;
+}
+.container + div {
+  position: relative;
+  top: 10%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%);
+}
+.container nav ul {
+  width: 24rem;
+  height: 3rem;
+}
+.container nav ul li {
+  position: relative;
+}
+.container nav ul li .profileLogo {
+  position: absolute;
+  right: 40%;
+  transform: translate(50%);
+  color: rgb(20, 150, 255);
+  font-size: 2rem;
+}
+.container nav ul li .twitterLogo {
+  position: absolute;
+  left: 40%;
+  transform: translate(-50%);
+  color: rgb(20, 150, 255);
+  font-size: 2rem;
+}
+.container nav ul li:last-child p {
+  position: absolute;
+  margin-top: 2.25rem;
+  right: 40%;
+  transform: translate(50%);
+  font-size: 0.7rem;
+  color: white;
+}
+.cancelBtn {
+  background-color: white;
+  padding: 5rem;
+}
+.nweetForm .nweet {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 20px;
+  padding: 1.1rem 1rem;
+  background: none;
+  border-width: 1px;
+  border-style: solid;
+  border-top: 1px solid rgb(20, 170, 255);
+  color: #c8c8c8;
+  width: 80%;
+}
+.nweetForm .nweet::placeholder {
+  padding-left: 0.75rem;
+}
+.nweetForm .nweetSub {
+  position: relative;
+  top: 0;
+  right: 4%;
+  width: 2.32rem;
+  height: 2.32rem;
+  border-radius: 50%;
+  background-color: rgb(20, 150, 255);
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+  border: 0;
+}
+.nweetForm .nweetSubBox2 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.nweetForm .nweetSubBox2 input {
+  position: relative;
+  left: 17%;
+  transform: scale(0.5);
+  background-color: black;
+  color: black;
+}
+.nweetForm .nweetSubBox2 label {
+  background-color: black;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  font-size: 0.5rem;
+  color: rgb(20, 150, 255);
+  text-align: center;
+  cursor: pointer;
+}
+.nweetForm .nweetSubBox2 label span {
+  position: absolute;
+  top: -90%;
+  font-size: 1.5rem;
+}
+.nweetForm {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.photoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photoBox img {
+  width: 3rem;
+}
+.photoBox button {
+  width: 3rem;
+  height: 1.5rem;
+  font-size: 10px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+}
+.nweetBox {
+  position: relative;
+}
+.nweetText {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  height: 3rem;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 2.5rem;
+}
+.nweetText h4 {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+  color: black;
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  color: rgb(50, 50, 50);
+}
+.nweetText div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -15%;
+  right: 0%;
+}
+.nweetText img {
+  position: absolute;
+  top: 60%;
+  right: -4%;
+  width: 3rem;
+  border-radius: 50%;
+}
+.nweetText button {
+  background: none;
+  color: rgb(50, 50, 50);
+  border: none;
+}
+.nweetForm {
+  position: relative;
+}
